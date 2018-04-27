@@ -80,14 +80,17 @@
                 <executions>
                     <execution>
                         <goals>
-                            <goal>java</goal>
+                            <goal>exec</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
                     <classpathScope>test</classpathScope>
-                    <mainClass>com.microsoft.azure.storage.Program</mainClass>
+                    <executable>java</executable>
                     <arguments>
+                        <argument>-classpath</argument>
+                        <classpath />
+                        <argument>com.microsoft.azure.storage.Program</argument>
                         <argument>javasdktest</argument>
                         <argument>ACCOUNT_KEY_GOES_HERE</argument>
                         <argument>upload/1g-0.dat</argument>
