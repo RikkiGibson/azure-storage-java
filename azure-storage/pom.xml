@@ -73,6 +73,27 @@
                     <compilerArgument>-Xlint:unchecked</compilerArgument>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <classpathScope>test</classpathScope>
+                    <mainClass>com.microsoft.azure.storage.Program</mainClass>
+                    <arguments>
+                        <argument>javasdktest</argument>
+                        <argument>ACCOUNT_KEY_GOES_HERE</argument>
+                        <argument>upload/1g-0.dat</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
 
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
